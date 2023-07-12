@@ -11,7 +11,7 @@ public class Health : MonoBehaviour
 
     void Start()
     {
-        
+        SetHealth(100);
     }
 
     public void SetHealth(int health)
@@ -25,7 +25,7 @@ public class Health : MonoBehaviour
         yield return new WaitForSeconds(delay);
         currentHealth = Mathf.Max(currentHealth - amount, 0);
         if (currentHealth == 0) { 
-            //dIE
+            SetHealth(100);
         }
         UpdateHealthBar();
     }

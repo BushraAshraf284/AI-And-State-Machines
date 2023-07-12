@@ -41,4 +41,9 @@ public class PlayerController : MonoBehaviour
     {
         transform.rotation = Quaternion.Slerp(transform.rotation, Quaternion.LookRotation(movementVector), 0.1f);
     }
+
+    public void Hurt(int amount, int delay = 0)
+    {
+        StartCoroutine(health.TakeDamageDelayed(amount, delay));
+    }
 }
